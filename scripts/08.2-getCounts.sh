@@ -1,5 +1,6 @@
 # use R and bioconductor to get read counts for each species
 
+DIR=$PWD
 
 for SPECIES in Arabidopsis Poplar;
 	outputDIR=./$SPECIES/counts
@@ -7,7 +8,7 @@ for SPECIES in Arabidopsis Poplar;
 	TxDbPath=./$SPECIES/${SPECIES}_TxDb.RData
 	bam_baiPath=./$SPECIES/alignments
 	
-	Rscript $DIR/scripts/getcounts.R\
+	Rscript $DIR/scripts/08.1-getcounts.R\
 	 ${bam_baiPath}\
 	 $TxDbPath\
 	 $outputDIR
